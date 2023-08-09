@@ -6,7 +6,7 @@ const socket = io("https://bolt-ai-chatbot.onrender.com");
 
 router.post("/get", (req, res) => {
   //Send the alert to the axios Server
-  const message = req.body;
+  const message = req;
   socket.emit("webStatus", message);
   res.status(200).send("OK");
 });
