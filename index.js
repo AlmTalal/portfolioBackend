@@ -3,9 +3,12 @@ const app = express();
 const cors = require("cors");
 const dotenv = require("dotenv");
 dotenv.config();
+//routes
+const webhook = require("./routes/webhookListener");
 
 app.use(express.json());
 app.use(cors());
+app.use(webhook);
 
 const port = process.env.PORT || 3000;
 
